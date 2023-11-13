@@ -8,24 +8,52 @@
 
 #include <iostream>
 
+void swap(int *arr, int a, int b)
+{
+    int temp = arr[a];
+    arr[a] = arr[b];
+    arr[b] = temp;
+}
+
 // sort_array()
 // Summary: This function receives an array of integers and sorts it in ascending order.
 // Arguments:
 //           arr: A pointer acting as the array to sort.
 //           n: The size of the array.
 // Returns: A boolean value: True on success, false otherwise.
-bool sort_array(int *arr, int n){
+bool sort_array(int *arr, int n)
+{
+    if (arr == NULL)
+    {
+        return false;
+    }
+    if (n < 2)
+    {
+        return true;
+    }
 
-    // Write your code here
+    bool sorted = false;
 
-    return false;
+    while(!sorted)
+    {
+        sorted = true;
+        for (int i = 0; i < n - 1; i++)
+        {
+            if (arr[i] > arr[i + 1])
+            {
+                swap(arr, i, i + 1);
+                sorted = false;
+            }
+        }
+    }
+    return true;
 }
 
 // Main function
 int main(){
     // The following array will be treated as an array of length len. 
-    const int len = 7; // Don't exceed the length of the array below!
-    int array[] = {2, 9, 4, 3, 5, 1, 6, 8, 0, 7};
+    const int len = 6; // Don't exceed the length of the array below!
+    int array[] = {2, 9, 4, 8, 5, 1, 6, 3, 0, 7};
 
     // Print the original array
     std::cout << "Original Array: [ ";
