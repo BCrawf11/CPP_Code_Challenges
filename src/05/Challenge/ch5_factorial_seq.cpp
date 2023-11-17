@@ -16,14 +16,19 @@
 // Returns: n!, the last calculated factorial.
 int print_factorials(int n){
     
-    // Write your code here
+    int fact = n == 1 ? 1 : n * print_factorials(n - 1);
 
-    return 0;
+    std::cout << std::to_string(fact) + " ";
+    return fact;
 }
 
 // Main function
 int main(){
-    print_factorials(10);
+    int n = 12;
+    std::cout << "n = " + std::to_string(n) + ": ";
+    std::cout << "{ ";
+    print_factorials(n);
+    std::cout << "}";
     std::cout << std::endl << std::endl << std::flush;
     return 0;
 }
