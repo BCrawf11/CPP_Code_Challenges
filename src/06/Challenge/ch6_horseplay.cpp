@@ -18,7 +18,15 @@
 std::vector<std::string> knight_moves(std::string knight){
     std::vector<std::string> moves;
 
-    // Write your code here
+    std::vector<char> letters = "abcdefgh";
+    char kLetter = knight[0];
+    char kNumber = knight[1];
+
+    for (int i = 0; i < 8; i++)
+    {
+        int lIndex = std::find(letters, 8, kLetter);
+        if ()
+    }
 
     return moves;
 }
