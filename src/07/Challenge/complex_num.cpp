@@ -1,33 +1,50 @@
 #include "complex_num.h"
 
 complex_num::complex_num(double r, double i){
-    // Write your code here
+    real = r;
+    imaginary = i;
 }
 
 complex_num complex_num::operator +(complex_num w){
     complex_num z;
-    // Write your code here
+    z.real = real + w.real;
+    z.imaginary = imaginary + w.imaginary;
     return z;
 }
 
 complex_num complex_num::operator -(complex_num w){
     complex_num z;
-    // Write your code here
+    z.real = real - w.real;
+    z.imaginary = imaginary - w.imaginary;
     return z;
 }
 
 complex_num complex_num::operator *(complex_num w){
     complex_num z;
-    // Write your code here
+    z.real = (real * w.real) - (imaginary * w.imaginary);
+    z.imaginary = (real * w.imaginary) + (imaginary * w.real);
     return z;
 }
 
 complex_num complex_num::operator /(complex_num w){
+    double div = (w.real * w.real) + (imaginary * w.imaginary);
     complex_num z;
-    // Write your code here
+    z.real = (real * w.real) + (imaginary * w.imaginary);
+    z.real /= div;
+    z.imaginary = (imaginary * w.real) - (real * w.imaginary);
+    z.imaginary /= div;
+
     return z;
 }
 
 void complex_num::print(std::ostream &os){
-    // Write your code here
+    if (imaginary >= 0.0)
+    {
+        os << real << " + " << imaginary << "i";
+    }
+    else
+    {
+        os << real << " - " << imaginary * -1 << "i";
+    }
+    os << std::flush;
 }
