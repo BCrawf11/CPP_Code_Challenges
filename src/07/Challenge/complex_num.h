@@ -4,8 +4,7 @@
 #include <iostream>
 
 class complex_num{
-    
-    // Write your code here
+
     private:
         double real;
         double imaginary;

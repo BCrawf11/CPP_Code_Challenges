@@ -15,9 +15,9 @@
 // Arguments:
 //           ip: The string to analyze with a potential ip address.
 // Returns: A boolean value. True for valid ip addresses, false otherwise.
-bool is_valid_ip(std::string ip){
-
-    // Write your code here
+bool is_valid_ip(std::string ip)
+{    
+    
 
     return false;
 }
